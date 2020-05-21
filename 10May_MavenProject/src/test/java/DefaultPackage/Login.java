@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
@@ -35,4 +36,18 @@ public class Login {
 			//Assert.assertEquals(driver.getTitle(), expected);
 			System.out.println("This is Title of the page : "+ driver.getTitle());
 	}
+	
+	@AfterMethod
+	public void CloseBrowser()
+	{
+		driver.quit();
+	}
 }
+
+
+
+
+
+
+
+
