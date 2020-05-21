@@ -41,7 +41,8 @@ public class Login {
 	public void CloseBrowser()
 	{
 		driver.quit();
-	}
+		System.out.println("Closed Browser...");
+	}	
 }
 
 
