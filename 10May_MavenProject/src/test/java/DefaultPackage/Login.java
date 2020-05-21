@@ -23,6 +23,7 @@ public class Login {
 	public void DeleteCookies()
 	{
 		driver.manage().deleteAllCookies();
+		System.out.println("Cookies deleted...");
 	}
 
 	@Test
