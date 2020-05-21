@@ -16,8 +16,7 @@ public class Login {
 	@BeforeTest
 	public void DriverConfiguration()
 	{
-		System.setProperty("webdriver.chrome.driver", "C:/EclipseWorkspace/Drivers/chromedriver.exe");
-		
+		System.setProperty("webdriver.chrome.driver", "C:/EclipseWorkspace/Drivers/chromedriver.exe");	
 	} 
 	
 	@BeforeMethod
