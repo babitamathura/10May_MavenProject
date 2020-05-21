@@ -3,6 +3,7 @@ package DefaultPackage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
@@ -10,25 +11,28 @@ import org.testng.annotations.Test;
 
 public class Login {
 	
-//
-//	@BeforeTest
-//	public void DriverConfiguration()
-//	{
-//	} 
-//	
-//	@BeforeMethod
-//	public void DeleteCookies()
-//	{
-//	}
+	WebDriver driver = new ChromeDriver ();
+
+	@BeforeTest
+	public void DriverConfiguration()
+	{
+		System.setProperty("webdriver.chrome.driver", "C:/EclipseWorkspace/Drivers/chromedriver.exe");
+		
+	} 
+	
+	@BeforeMethod
+	public void DeleteCookies()
+	{
+		driver.manage().deleteAllCookies();
+	}
 
 	@Test
 	public void Login()
 	{
-		System.setProperty("webdriver.chrome.driver", "C:/EclipseWorkspace/Drivers/chromedriver.exe");
-		WebDriver driver = new ChromeDriver ();
-
-		driver.get("https://www.flipkart.com/");
-		
-	//	System.out.println("This is Login.java - Login Method");
+			driver.get("https://www.flipkart.com/");
+			driver.getTitle();
+			
+			//Assert.assertEquals(driver.getTitle(), expected);
+			System.out.println("This is Title of the page : "+ driver.getTitle());
 	}
 }
